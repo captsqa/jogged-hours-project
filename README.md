@@ -1,17 +1,11 @@
-# Basic Automation Project
-## Automation Testing Concepts
+# Jogged Hours  Project
+## Loop Concepts
 
-*Automation to cover basic test functionalities and core concepts*
 
 **Java 8**
 
 * Maven
-* TestNG
-* Log4j
-* Selenium WebDriver
-* Apache POI
-* MySQL
 
-Maven Project for automation testing. 
+Maven Project for jogged hours. 
 
 [Chhaya Patel](https://github.com/captsqa/)
