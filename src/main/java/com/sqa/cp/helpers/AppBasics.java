@@ -7,11 +7,9 @@
  */
 package com.sqa.cp.helpers;
 
-import java.util.Scanner;
+import java.util.*;
 
-import com.sqa.cp.helpers.exceptions.RequestNumberNotWithinRangeException;
-import com.sqa.cp.helpers.exceptions.RequestNumberOverMaxException;
-import com.sqa.cp.helpers.exceptions.RequestNumberUnderMinException;
+import com.sqa.cp.helpers.exceptions.*;
 
 /**
  * AppBasics //ADDD (description of class) //ADDD (description of core fields)
@@ -52,8 +50,8 @@ public class AppBasics {
 	 * @param appName
 	 *            Name of application
 	 */
-	public static void farewellUser(String name, String appName) {
-		System.out.println("\nThank you " + name + ", for using " + appName + "Application.\nHave a great Day!");
+	public static void farewellUser(String appName) {
+		System.out.println("\nThank you, for using " + appName + "Application.\nHave a great Day!");
 	}
 
 	/**
@@ -72,7 +70,6 @@ public class AppBasics {
 
 	public static int getTotalJoggers() {
 		int totalJoggers = 0;
-		System.out.println("How many joggers information do you want to enter :");
 		totalJoggers = scanner.nextInt();
 		return totalJoggers;
 	}
@@ -85,12 +82,17 @@ public class AppBasics {
 	 *            Name of Application
 	 * @return name Name of user
 	 */
-	public static String greetUserAndGetName(String appName) {
+	public static void greetUserAndGetName(String appName) {
 		System.out.println("Welcome to the " + appName + " Application");
+		System.out.println("-----------------------------------------------");
 		// System.out.print("Please provide registered jogger's name : ");
-		return scanner.nextLine();
+		// return scanner.nextLine();
 	}
 
+	/**
+	 * @param question
+	 * @return
+	 */
 	public static boolean requestBoolean(String question) {
 		String input;
 		boolean isValid = false;
@@ -111,6 +113,10 @@ public class AppBasics {
 		return response;
 	}
 
+	/**
+	 * @param question
+	 * @return
+	 */
 	public static byte requestByte(String question) {
 		byte num = 0;
 		String input;
@@ -128,11 +134,19 @@ public class AppBasics {
 		return num;
 	}
 
+	/**
+	 * @param question
+	 * @return
+	 */
 	public static char requestChar(String question) {
 		System.out.print(question + " ");
 		return scanner.nextLine().charAt(0);
 	}
 
+	/**
+	 * @param question
+	 * @return
+	 */
 	public static double requestDouble(String question) {
 		double num = 0;
 		String input;
@@ -150,6 +164,10 @@ public class AppBasics {
 		return num;
 	}
 
+	/**
+	 * @param question
+	 * @return
+	 */
 	public static float requestFloat(String question) {
 		float num = 0;
 		String input;
@@ -172,24 +190,21 @@ public class AppBasics {
 	 *            Ask user a Question
 	 * @return
 	 */
-	public static int requestInt(String question) {
+	public static int requestInt() {
 		int resultNumber = 0;
-		String input = "";
+		int input = 0;
 		boolean valid = false;
 		while (!valid) {
 			try {
-				// Ask Question
-				System.out.print(question + " ");
-				// Get Input String from user
-				input = scanner.nextLine();
-				// Parse input string into int type
-				resultNumber = Integer.parseInt(input);
+				System.out.print("How many days he/she jogged this week? ");
+				input = scanner.nextInt();
 				valid = true;
 			} catch (NumberFormatException e) {
 				System.out.println("You have not entered a valid formatted number [" + input + "]");
 			}
 		}
-		return resultNumber;
+		// return resultNumber;
+		return input;
 	}
 
 	/**
@@ -268,6 +283,10 @@ public class AppBasics {
 		return resultNumber;
 	}
 
+	/**
+	 * @param question
+	 * @return
+	 */
 	public static long requestLong(String question) {
 		long num = 0;
 		String input;
@@ -285,6 +304,10 @@ public class AppBasics {
 		return num;
 	}
 
+	/**
+	 * @param question
+	 * @return
+	 */
 	public static short requestShort(String question) {
 		short num = 0;
 		String input;
